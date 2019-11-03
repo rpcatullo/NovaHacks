@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>NovaHacks</title>
+        <style>
+            .page {
+                width: 100%;
+                height: 100%;
+                background-color: #000;
+                color: #fff;
+            }
+            .navbar {
+                background-color: rgba(0, 0, 0, .80) !important;
+            }
+            .navbar-item, .burger-line {
+                color: #ddd !important;
+                border-bottom: 1px solid rgba(216, 44, 44, 0);
+            }
+            .navbar-item:hover {
+                color: rgb(211, 84, 84) !important;
+                background-color: black !important;
+                border-bottom: 1px solid rgba(216, 44, 44, 1);
+                transition: border-bottom-color 250ms ease;
+                transition: color 250ms ease;
+            }
+            .logo:hover, .end-item:hover {
+                border-bottom: none !important;
+            }
+            .title, .subtitle {
+                color: #fff !important;
+            }
+            .highlighted {
+                background: linear-gradient(90deg, rgb(216, 44, 44), rgba(248, 49, 49, .05));
+                display: inline-block !important; 
+            }
+            .inline {
+                display: inline-block !important; 
+            }
+            #cursor {
+                margin-bottom: -4px;
+                margin-left: -6px;
+                width: 2px;
+                background: #fff;
+                opacity: 1;
+                display: inline-block;
+            }
+            #cursor.active {
+                animation: blink 1s linear infinite alternate;
+            }
+            .hbar {
+                width: 93%;
+                height: 2px;
+                background: #fff;
+                display: block;
+                margin: auto;
+            }
+            p.text {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .faq-card {
+                border-radius: 10px;
+                border: 1px solid white;
+                box-shadow: 10px 10px 10px rgba(216, 44, 44, .5);
+                height: 100px;
+                position: relative;
+                left: 0px;
+                top: 0px;
+                padding: 15px;
+                transition: all 350ms ease-in-out;
+            }
+            .faq-content {
+                opacity: 0;
+                margin-top: 5px;
+                transition: all 1000ms ease-in-out;
+            }
+            .faq-content.enabled {
+                opacity: 1;
+            }
+            .faq-card:hover {
+                box-shadow: 0px 0px 10px rgba(216, 44, 44, .5);
+                left: 3px;
+                top: 3px;
+                height: 230px;
+            }
+            .schedule {
+                width: 70%;
+            }
+            .schedule-column {
+                border-radius: 10px;
+                border: 1px solid white;
+                margin: 10px;
+            }
+            .wrapper {
+                display: flex;
+                justify-content: center;
+            }
+            .date {
+                border-bottom: 1px solid rgb(216, 44, 44);
+                width: 110px;
+            }
+            .footer {
+                background-color: black !important;
+            }
+            ul.no-bullets {
+                list-style-type: none !important;
+            }
+            .icon {
+                color:rgb(216, 44, 44);
+                display: inline-block;
+                white-space: nowrap;
+                font-size: 30px;
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-bottom: 20px;
+                transition: all 100ms ease;
+            }
+            .icon:hover {
+                color: rgb(211, 84, 84);
+            }
+            @media screen and (min-width: 1024px) {
+                #cursor {
+                    height: 45px;
+                }
+                .faq-columns {
+                    height: 180px;
+                } 
+            }
+            @media screen and (max-width: 1023px) {
+                #cursor {
+                    height: 35px;
+                }
+                .faq-columns {
+                    height: 600px;
+                }  
+            }
+            @keyframes blink {
+                50% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <section class="page">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item logo" href="https://bulma.io">
+                        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+                    </a>
+            
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+                        <span aria-hidden="true" class="burger-line"></span>
+                        <span aria-hidden="true" class="burger-line"></span>
+                        <span aria-hidden="true" class="burger-line"></span>
+                    </a>
+                </div>
+            
+                <div id="navbar" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item">
+                            Home
+                        </a>
+                        
+                        <a class="navbar-item" href="#about">
+                            About
+                        </a>
+
+                        <a class="navbar-item" href="#faq">
+                            FAQ
+                        </a>
+
+                        <a class="navbar-item" href="#apply">
+                            Apply
+                        </a>
+
+                        <a class="navbar-item" href="#schedule">
+                            Schedule
+                        </a>
+
+                        <a class="navbar-item">
+                            Sponsors
+                        </a>
+
+                        <a class="navbar-item">
+                            Team
+                        </a>
+                    </div>            
+                    <div class="navbar-end">
+                        <div class="navbar-item end-item">
+                            <div class="buttons">
+                                <a class="button is-theme">
+                                    <strong>Register</strong>
+                                </a>
+                                <a class="button is-light">
+                                    Contact
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="hero is-fullheight-with-navbar page-home">
+                <div class="hero-body">
+                    <div class="container">
+                        <div class="title is-size-1-desktop">
+                            <p style="white-space: nowrap !important;">
+                                <p class="highlighted is-size-4-mobile">Make</p>
+                                <p class="inline is-size-4-mobile" id="page-title"> </p>
+                                <span id="cursor"></span>
+                            </p>
+                        </div>
+                        <div class="subtitle is-size-6-mobile" style="margin-top: 10px;">
+                            24 hours - February 22-23 - University of Virginia
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="hbar"></span>
+            <div id="about">
+                <div class="hero">
+                    <div class="hero-body">
+                        <div class="container">
+                            <div class="title">
+                                <p class="inline is-size-2-desktop" style="background: linear-gradient(90deg, rgb(216, 44, 44), rgb(255, 196, 196)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">NovaHacks</p>
+                            </div>
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="content">
+                                        <p class="text">
+                                            NovaHacks is a 24 hour hackathon (coding competition) for highschool students. Over the February 22-23 weekend, over 100 students will
+                                            come to the Northern Virginia area to compete for bragging rights and awesome prizes.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="column"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="faq">
+                <div class="hero">
+                    <div class="hero-body">
+                        <div class="container">
+                            <div class="title">
+                                <p>FAQ</p>
+                            </div>
+                            <div class="columns faq-columns">
+                                <div class="column">
+                                    <div class="faq-card">
+                                        <p class="is-size-5-desktop">Who can come?</p>
+                                        <p class="faq-content">
+                                            <b>Any high school student</b> in grades 9 through 12 can come to the event. You don't need to live 
+                                            in Virginia, either. Anyone in the United States can attend. We hope you can make it!
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="faq-card">
+                                        <p class="is-size-5-desktop">Do I need to know how to code?</p>
+                                        <p class="faq-content">
+                                            <b>No!</b> You don't have to have any prior coding knowledge, although it helps. If you want to come
+                                            just to learn and not to compete, thats fine. 
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="faq-card">
+                                        <p class="is-size-5-desktop">How big can teams be?</p>
+                                        <p class="faq-content">
+                                            The maximum team size is <b>4</b>. Also, you can form teams prior to the event. Signup with you friends
+                                            and work together on a project (as long as you start coding <b>at the event</b>.)
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="faq-card">
+                                        <p class="is-size-5-desktop">Does it cost anything?</p>
+                                        <p class="faq-content">
+                                            Nope! This hackathon is <b>100% free</b> for all attendees. The cost is covered by our wonderful sponsors,
+                                            who are listed below. Also, <b>food and snacks will be provided</b> at the event.
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="apply" style="margin-bottom: 50px;">
+                <div class="hero">
+                    <div class="hero-body">
+                        <div class="container">
+                            <div class="title">
+                                <p>Apply</p>
+                            </div>
+                            <div>
+                                <p>
+                                    Unfortunately, we do have a maximum capacity for participants. As such, it is best to apply early so as not to
+                                    risk losing a spot at the hackathon when applications close. To apply, you need to provide name, age, grade, and sign 
+                                    liability forms as well as other legal forms our venue requires.<br><br>
+                                    To get started with this process, click the <button style="border-radius: 5px; font-weight: bold;">Register</button> button in the top right corner.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="schedule">
+                <div class="hero">
+                    <div class="hero-body">
+                        <div class="container">
+                            <div class="title">
+                                <p>Schedule</p>
+                            </div>
+                            <div>
+                                <div class="wrapper">
+                                    <div class="columns schedule is-centered">
+                                        <div class="column schedule-column">
+                                            <div class="subtitle date">
+                                                February 22
+                                            </div>
+                                            <ul class="no-bullets">
+
+                                            </ul>
+                                        </div>
+                                        <div class="column schedule-column">
+                                            <div class="subtitle date">
+                                                February 23
+                                            </div>
+                                            <ul class="no-bullets">
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>
+                        <a href=""><i class="fab fa-instagram icon"></i></a>
+                        <a href=""><i class="fab fa-github icon"></i></a>
+                        <a href=""><i class="fab fa-twitter icon"></i></a>
+                        <a href=""><i class="fas fa-envelope icon"></i></a>
+                        <br>
+                        NovaHacks is a 501(c)(3) nonprofit organization<br>
+                        <p style="color: rgba(255, 255, 255, .5); margin-top: -10px;">
+                            Fiscally sponsored by the Hack Foundation
+                            <br>
+                            Nonprofit EIN: 81-2908499
+                        </p> 
+                    </p>
+                </div>
+            </footer>
+        </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                // Get all "navbar-burger" elements
+                const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+                // Check if there are any navbar burgers
+                if ($navbarBurgers.length > 0) {
+
+                    // Add a click event on each of them
+                    $navbarBurgers.forEach( el => {
+                        el.addEventListener('click', () => {
+
+                        // Get the target from the "data-target" attribute
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+
+                        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+
+                        });
+                    });
+                }
+
+            });
+
+            var text = ["new hacker friends", "a cool project", "something amazing", "something innovative", "the next big app", "a prize-winning program", "the best thing since linux", "art with code"];
+            var j = 0;
+            var i = 0;
+
+            var writeText = function writeText() {
+                var elem = document.getElementById('page-title');
+                j %= text.length;
+                elem.textContent += text[j].charAt(i)
+                i++;
+                if (i < text[j].length) {
+                    window.setTimeout(writeText, 60);
+                } else if (i == text[j].length) {
+                    document.getElementById('cursor').classList.toggle('active');
+                    window.setTimeout(function toggle() {
+                        document.getElementById('cursor').classList.toggle('active');
+                    }, 1500);
+                    window.setTimeout(deleteText, 1500);
+                }
+            }
+
+            var deleteText = function deleteText() {
+                var elem = document.getElementById('page-title');
+                elem.textContent = text[j].substring(0, i);
+                i--;
+                if (i >= 0) {
+                    window.setTimeout(deleteText, 60);
+                } else if (i < 0) {
+                    j++;
+                    window.setTimeout(writeText, 30);
+                }
+            }
+
+            writeText();
+
+            $('.faq-card').hover(
+                function() {
+                    $(this.children).css('transition', 'all 500ms ease-in-out 100ms');
+                    $(this.children).addClass('enabled');
+                }, 
+                function() {
+                    $(this.children).css('transition', 'all 100ms ease-in-out');
+                    $(this.children).removeClass('enabled');
+            });
+        </script>
+    </body>
+</html>
