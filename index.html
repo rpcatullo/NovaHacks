@@ -59,6 +59,9 @@
             p.text {
                 font-family: Arial, Helvetica, sans-serif;
             }
+            .underlined {
+                text-decoration: underline solid rgb(216, 44, 44);
+            }
             .faq-card {
                 border-radius: 10px;
                 border: 1px solid white;
@@ -96,10 +99,6 @@
                 display: flex;
                 justify-content: center;
             }
-            .date {
-                border-bottom: 1px solid rgb(216, 44, 44);
-                width: 110px;
-            }
             .footer {
                 background-color: black !important;
             }
@@ -119,6 +118,10 @@
             .icon:hover {
                 color: rgb(211, 84, 84);
             }
+            .hour {
+                display: inline-block;
+                margin-bottom: 20px;
+            }
             @media screen and (min-width: 1024px) {
                 #cursor {
                     height: 45px;
@@ -133,7 +136,10 @@
                 }
                 .faq-columns {
                     height: 600px;
-                }  
+                } 
+                .faq-card:hover {
+                    height: 180px;
+                }
             }
             @keyframes blink {
                 50% {
@@ -144,6 +150,8 @@
                 }
             }
         </style>
+        <link rel="icon" href="media/icon-alternate.ico">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" rel="stylesheet" type="text/css" />
@@ -152,8 +160,8 @@
         <section class="page">
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
-                    <a class="navbar-item logo" href="https://bulma.io">
-                        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+                    <a class="navbar-item logo" href="." style="margin-top: 3px;">
+                        <img src="media/novahacks-logo.png" width="112" height="28">
                     </a>
             
                     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
@@ -209,16 +217,16 @@
             </nav>
             <div class="hero is-fullheight-with-navbar page-home">
                 <div class="hero-body">
-                    <div class="container">
+                    <div class="container" style="position: relative; bottom: 50px;">
                         <div class="title is-size-1-desktop">
                             <p style="white-space: nowrap !important;">
-                                <p class="highlighted is-size-4-mobile">Make</p>
+                                <div class="image inline is-128x128" style="position: relative; top: 60px;">
+                                    <img src="media/novahacks-logo-alternate.png" alt="">
+                                </div>
+                                <p class="underlined inline is-size-4-mobile">Make</p>
                                 <p class="inline is-size-4-mobile" id="page-title"> </p>
                                 <span id="cursor"></span>
                             </p>
-                        </div>
-                        <div class="subtitle is-size-6-mobile" style="margin-top: 10px;">
-                            24 hours - February 22-23 - University of Virginia
                         </div>
                     </div>
                 </div>
@@ -229,7 +237,7 @@
                     <div class="hero-body">
                         <div class="container">
                             <div class="title">
-                                <p class="inline is-size-2-desktop" style="background: linear-gradient(90deg, rgb(216, 44, 44), rgb(255, 196, 196)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">NovaHacks</p>
+                                <p class="inline is-size-2-desktop" style="background: linear-gradient(90deg, rgb(216, 44, 44), rgb(255, 196, 196)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Montserrat'; letter-spacing: 5px;">NovaHacks</p>
                             </div>
                             <div class="columns">
                                 <div class="column">
@@ -251,7 +259,7 @@
                     <div class="hero-body">
                         <div class="container">
                             <div class="title">
-                                <p>FAQ</p>
+                                <p class="underlined">FAQ</p>
                             </div>
                             <div class="columns faq-columns">
                                 <div class="column">
@@ -302,7 +310,7 @@
                     <div class="hero-body">
                         <div class="container">
                             <div class="title">
-                                <p>Apply</p>
+                                <p class="underlined">Apply</p>
                             </div>
                             <div>
                                 <p>
@@ -321,25 +329,73 @@
                     <div class="hero-body">
                         <div class="container">
                             <div class="title">
-                                <p>Schedule</p>
+                                <p class="underlined">Schedule</p>
                             </div>
                             <div>
                                 <div class="wrapper">
                                     <div class="columns schedule is-centered">
                                         <div class="column schedule-column">
-                                            <div class="subtitle date">
+                                            <div class="subtitle">
                                                 February 22
                                             </div>
                                             <ul class="no-bullets">
-
+                                                <span class="hour">10:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">11:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">12:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">1:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">2:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">3:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">4:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">5:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">6:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">7:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">8:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">9:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">10:00&nbsp;</span><br>
                                             </ul>
                                         </div>
                                         <div class="column schedule-column">
-                                            <div class="subtitle date">
+                                            <div class="subtitle">
                                                 February 23
                                             </div>
                                             <ul class="no-bullets">
-
+                                                <span class="hour">12:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">1:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">2:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">3:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">4:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">5:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">6:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">7:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">8:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">9:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">10:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">11:00&nbsp;</span><br>
+                                                <span class="hour"></span><br>
+                                                <span class="hour">12:00&nbsp;</span><br>
                                             </ul>
                                         </div>
                                     </div>
@@ -437,6 +493,17 @@
                 function() {
                     $(this.children).css('transition', 'all 100ms ease-in-out');
                     $(this.children).removeClass('enabled');
+            });
+            $('.hour').after(function() {
+                var width = $(this).parent().width();
+                return "<span style='width: " + (width - $(this).width()) + "px; display: inline-block; position: relative; bottom: " + ($(this).width() == 0 ? "13px" : "5px" ) + "; border-top: 1px solid #ccc;'></span>";
+            });
+            $(window).resize(function() {
+                $('.hour').next().remove();
+                $('.hour').after(function() {
+                    var width = $(this).parent().width();
+                    return "<span style='width: " + (width - $(this).width()) + "px; display: inline-block; position: relative; bottom: " + ($(this).width() == 0 ? "13px" : "5px" ) + "; border-top: 1px solid #ccc;'></span>";
+                });
             });
         </script>
     </body>
