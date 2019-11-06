@@ -429,6 +429,7 @@
                         $(this.children).removeClass('enabled');
                     }
             });
+            
             $('.hour').after(function() {
                 var width = $(this).parent().width();
                 return "<span style='width: " + (width - $(this).width()) + "px; display: inline-block; position: relative; bottom: " + ($(this).width() == 0 ? "13px" : "5px" ) + "; border-top: 1px solid #ccc;'></span>";
