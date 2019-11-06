@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>NovaHacks</title>
+        <link rel="stylesheet" href="main.css">     
+        <link rel="icon" href="media/novahacks-favicon.ico">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <section class="page">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item logo" href="." style="margin-top: 3px;">
+                        <img src="media/novahacks-logo-full.png" width="112" height="28">
+                    </a>
+            
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+                        <span aria-hidden="true" class="burger-line"></span>
+                        <span aria-hidden="true" class="burger-line"></span>
+                        <span aria-hidden="true" class="burger-line"></span>
+                    </a>
+                </div>
+            
+                <div id="navbar" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item" href=".">
+                            Home
+                        </a>
+                        
+                        <a class="navbar-item" href="./#about">
+                            About
+                        </a>
+
+                        <a class="navbar-item" href="./#faq">
+                            FAQ
+                        </a>
+
+                        <a class="navbar-item" href="./#apply">
+                            Apply
+                        </a>
+
+                        <a class="navbar-item" href="./#schedule">
+                            Schedule
+                        </a>
+
+                        <a class="navbar-item">
+                            Sponsors
+                        </a>
+
+                        <a class="navbar-item">
+                            Team
+                        </a>
+                    </div>            
+                    <div class="navbar-end">
+                        <div class="navbar-item end-item">
+                            <div class="buttons">
+                                <a class="button is-theme" href="registration.html">
+                                    <strong>Register</strong>
+                                </a>
+                                <a class="button is-light" href="mailto:hello@novahacks.org">
+                                    Contact
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="hero">
+                <div class="hero-body">
+                    <div class="container">
+                        <div class="title">
+                            <p class="underlined">
+                                Register
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero">
+                <div class="hero-body">
+                    <div class="container">
+                        <div class="field">
+                            <form class="control" action="https://hulking-authorization.glitch.me/submit-form" method="POST">
+                                <div class="subtitle" style="color: #fff !important;">
+                                        Enter your information below and hit submit.
+                                </div>
+                                <div class="columns name">
+                                    <div class="column">
+                                        <input name="first" class="input name-input" type="text" placeholder="First Name">
+                                    </div>
+                                    <div class="column">
+                                        <input name="last" class="input name-input" type="text" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <input name="school" class="input" type="text" placeholder="School">
+                                <input name="grade" class="input" type="text" placeholder="Grade">
+                                <input name="age" class="input" type="text" placeholder="Age">
+                                <input name="email" class="input" type="text" placeholder="Email">
+                                <input name="notes" class="input" type="text" placeholder="Notes (dietary restrictions, transportation issue, ...)">
+                                <div class="buttons" style="margin-top: 40px;">
+                                    <input class="button" type="submit" value="Submit" style="color: #000 !important; font-weight: bold !important;">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>
+                        <a href="https://www.instagram.com/novahacks/"><i class="fab fa-instagram icon"></i></a>
+                        <a href="https://github.com/rpcatullo/NovaHacks"><i class="fab fa-github icon"></i></a>
+                        <a href="https://twitter.com/nova_hacks"><i class="fab fa-twitter icon"></i></a>
+                        <a href="mailto:hello@novahacks.org"><i class="fas fa-envelope icon"></i></a>
+                        <br>
+                        NovaHacks is a 501(c)(3) nonprofit organization<br>
+                        <p style="color: rgba(255, 255, 255, .5); margin-top: -10px;">
+                            Fiscally sponsored by the Hack Foundation
+                            <br>
+                            Nonprofit EIN: 81-2908499
+                        </p> 
+                    </p>
+                </div>
+            </footer>
+        </section>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    </script>
+</html>

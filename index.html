@@ -4,153 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>NovaHacks</title>
-        <style>
-            .page {
-                width: 100%;
-                height: 100%;
-                background-color: #000;
-                color: #fff;
-            }
-            .navbar {
-                background-color: rgba(0, 0, 0, .80) !important;
-            }
-            .navbar-item, .burger-line {
-                color: #ddd !important;
-                border-bottom: 1px solid rgba(216, 44, 44, 0);
-            }
-            .navbar-item:hover {
-                color: rgb(211, 84, 84) !important;
-                background-color: black !important;
-                border-bottom: 1px solid rgba(216, 44, 44, 1);
-                transition: border-bottom-color 250ms ease;
-                transition: color 250ms ease;
-            }
-            .logo:hover, .end-item:hover {
-                border-bottom: none !important;
-            }
-            .title, .subtitle {
-                color: #fff !important;
-            }
-            .highlighted {
-                background: linear-gradient(90deg, rgb(216, 44, 44), rgba(248, 49, 49, .05));
-                display: inline-block !important; 
-            }
-            .inline {
-                display: inline-block !important; 
-            }
-            #cursor {
-                margin-bottom: -4px;
-                margin-left: -6px;
-                width: 2px;
-                background: #fff;
-                opacity: 1;
-                display: inline-block;
-            }
-            #cursor.active {
-                animation: blink 1s linear infinite alternate;
-            }
-            .hbar {
-                width: 93%;
-                height: 2px;
-                background: #fff;
-                display: block;
-                margin: auto;
-            }
-            p.text {
-                font-family: Arial, Helvetica, sans-serif;
-            }
-            .underlined {
-                text-decoration: underline solid rgb(216, 44, 44);
-            }
-            .faq-card {
-                border-radius: 10px;
-                border: 1px solid white;
-                box-shadow: 10px 10px 10px rgba(216, 44, 44, .5);
-                height: 100px;
-                position: relative;
-                left: 0px;
-                top: 0px;
-                padding: 15px;
-                transition: all 350ms ease-in-out;
-            }
-            .faq-content {
-                opacity: 0;
-                margin-top: 5px;
-                transition: all 1000ms ease-in-out;
-            }
-            .faq-content.enabled {
-                opacity: 1;
-            }
-            .faq-card:hover {
-                box-shadow: 0px 0px 10px rgba(216, 44, 44, .5);
-                left: 3px;
-                top: 3px;
-                height: 230px;
-            }
-            .schedule {
-                width: 70%;
-            }
-            .schedule-column {
-                border-radius: 10px;
-                border: 1px solid white;
-                margin: 10px;
-            }
-            .wrapper {
-                display: flex;
-                justify-content: center;
-            }
-            .footer {
-                background-color: black !important;
-            }
-            ul.no-bullets {
-                list-style-type: none !important;
-            }
-            .icon {
-                color:rgb(216, 44, 44);
-                display: inline-block;
-                white-space: nowrap;
-                font-size: 30px;
-                margin-left: 10px;
-                margin-right: 10px;
-                margin-bottom: 20px;
-                transition: all 100ms ease;
-            }
-            .icon:hover {
-                color: rgb(211, 84, 84);
-            }
-            .hour {
-                display: inline-block;
-                margin-bottom: 20px;
-            }
-            @media screen and (min-width: 1024px) {
-                #cursor {
-                    height: 45px;
-                }
-                .faq-columns {
-                    height: 180px;
-                } 
-            }
-            @media screen and (max-width: 1023px) {
-                #cursor {
-                    height: 35px;
-                }
-                .faq-columns {
-                    height: 600px;
-                } 
-                .faq-card:hover {
-                    height: 180px;
-                }
-            }
-            @keyframes blink {
-                50% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                }
-            }
-        </style>
-        <link rel="icon" href="media/icon-alternate.ico">
+        <link rel="stylesheet" href="main.css">
+        <link rel="icon" href="media/novahacks-favicon.ico">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
@@ -161,7 +16,7 @@
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
                     <a class="navbar-item logo" href="." style="margin-top: 3px;">
-                        <img src="media/novahacks-logo.png" width="112" height="28">
+                        <img src="media/novahacks-logo-full.png" width="112" height="28">
                     </a>
             
                     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
@@ -204,10 +59,10 @@
                     <div class="navbar-end">
                         <div class="navbar-item end-item">
                             <div class="buttons">
-                                <a class="button is-theme">
+                                <a class="button is-theme" href="registration.html">
                                     <strong>Register</strong>
                                 </a>
-                                <a class="button is-light">
+                                <a class="button is-light" href="mailto:hello@novahacks.org">
                                     Contact
                                 </a>
                             </div>
@@ -220,10 +75,10 @@
                     <div class="container" style="position: relative; bottom: 50px;">
                         <div class="title is-size-1-desktop">
                             <p style="white-space: nowrap !important;">
-                                <div class="image inline is-128x128" style="position: relative; top: 60px;">
-                                    <img src="media/novahacks-logo-alternate.png" alt="">
+                                <div class="image inline is-128x128 main-logo">
+                                    <img src="media/novahacks-logo.png" alt="">
                                 </div>
-                                <p class="underlined inline is-size-4-mobile">Make</p>
+                                <p class="underlined inline is-size-4-mobile make">Make</p>
                                 <p class="inline is-size-4-mobile" id="page-title"> </p>
                                 <span id="cursor"></span>
                             </p>
@@ -233,11 +88,13 @@
             </div>
             <span class="hbar"></span>
             <div id="about">
-                <div class="hero">
+                <div class="hero is-fullheight-mobile">
                     <div class="hero-body">
                         <div class="container">
                             <div class="title">
-                                <p class="inline is-size-2-desktop" style="background: linear-gradient(90deg, rgb(216, 44, 44), rgb(255, 196, 196)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Montserrat'; letter-spacing: 5px;">NovaHacks</p>
+                                <div class="image inline" style="max-width: 300px;">
+                                    <img src="media/novahacks-logo-full.png" alt="">
+                                </div>
                             </div>
                             <div class="columns">
                                 <div class="column">
@@ -255,49 +112,118 @@
                 </div>
             </div>
             <div id="faq">
-                <div class="hero">
+                <div class="hero is-fullheight">
                     <div class="hero-body">
                         <div class="container">
                             <div class="title">
                                 <p class="underlined">FAQ</p>
                             </div>
                             <div class="columns faq-columns">
-                                <div class="column">
-                                    <div class="faq-card">
-                                        <p class="is-size-5-desktop">Who can come?</p>
-                                        <p class="faq-content">
-                                            <b>Any high school student</b> in grades 9 through 12 can come to the event. You don't need to live 
-                                            in Virginia, either. Anyone in the United States can attend. We hope you can make it!
-
-                                        </p>
+                                <div class="column is-one-quater">
+                                    <div class="columns is-multiline">
+                                        <div class="column is-full">
+                                            <div class="card-wrapper">
+                                                <div class="faq-card">
+                                                    <p class="is-size-5-desktop">Who can come?</p>
+                                                    <p class="faq-content">
+                                                        <b>Any high school student</b> in grades 9 through 12 can come to the event. You don't need to live 
+                                                        in Virginia, either. Anyone in the United States can attend. We hope you can make it!
+            
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-full">
+                                            <div class="card-wrapper">
+                                                <div class="faq-card">
+                                                    <p class="is-size-5-desktop">Is this event supervised?</p>
+                                                    <p class="faq-content">
+                                                        Although this event was planned and organized by high school students, there are adults and mentors at
+                                                        the event. In short, it is fully supervised by 20+ adults.
+            
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="column">
-                                    <div class="faq-card">
-                                        <p class="is-size-5-desktop">Do I need to know how to code?</p>
-                                        <p class="faq-content">
-                                            <b>No!</b> You don't have to have any prior coding knowledge, although it helps. If you want to come
-                                            just to learn and not to compete, thats fine. 
-                                        </p>
+                                <div class="column is-one-quater">
+                                    <div class="columns is-multiline">
+                                        <div class="column is-full">
+                                            <div class="card-wrapper">
+                                                <div class="faq-card">
+                                                    <p class="is-size-5-desktop">I'm new to coding...</p>
+                                                    <p class="faq-content">
+                                                        <b>That's ok!</b> You don't have to have any prior coding knowledge, although it helps. If you want to come
+                                                        just to learn and not to compete, thats fine. 
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-full">
+                                            <div class="card-wrapper">
+                                                <div class="faq-card">
+                                                    <p class="is-size-5-desktop">Where will I sleep?</p>
+                                                    <p class="faq-content">
+                                                            We will provide quiet places to sleep at the event, and turn lights off after the midnight snack. 
+                                                            We’ll make sure you’re able to get some sleep if you need it!
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="column">
-                                    <div class="faq-card">
-                                        <p class="is-size-5-desktop">How big can teams be?</p>
-                                        <p class="faq-content">
-                                            The maximum team size is <b>4</b>. Also, you can form teams prior to the event. Signup with you friends
-                                            and work together on a project (as long as you start coding <b>at the event</b>.)
-                                        </p>
+                                <div class="column is-one-quater">
+                                    <div class="columns is-multiline">
+                                        <div class="column is-full">
+                                            <div class="card-wrapper">
+                                                <div class="faq-card">
+                                                    <p class="is-size-5-desktop">How big can teams be?</p>
+                                                    <p class="faq-content">
+                                                        The maximum team size is <b>4</b>. Also, you can form teams prior to the event. Signup with your friends
+                                                        and work together on a project (as long as you start coding <b>at the event</b>.)
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-full">
+                                            <div class="card-wrapper">
+                                                <div class="faq-card">
+                                                    <p class="is-size-5-desktop">Do I need a team?</p>
+                                                    <p class="faq-content">
+                                                        Nope. You can work solo or with friends. You can even arrive at the event without anyone 
+                                                        and look for teammates. Or, you can join our slack above and ask around if anyone is looking for a team.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="column">
-                                    <div class="faq-card">
-                                        <p class="is-size-5-desktop">Does it cost anything?</p>
-                                        <p class="faq-content">
-                                            Nope! This hackathon is <b>100% free</b> for all attendees. The cost is covered by our wonderful sponsors,
-                                            who are listed below. Also, <b>food and snacks will be provided</b> at the event.
-
-                                        </p>
+                                <div class="column is-one-quater">
+                                    <div class="columns is-multiline">
+                                        <div class="column is-full">
+                                            <div class="card-wrapper">
+                                                <div class="faq-card">
+                                                    <p class="is-size-5-desktop">Does it cost anything?</p>
+                                                    <p class="faq-content">
+                                                        Nope! This hackathon is <b>100% free</b> for all attendees. The cost is covered by our wonderful sponsors,
+                                                        who are listed below. Also, <b>food and snacks will be provided</b> at the event.
+            
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-full">
+                                            <div class="card-wrapper">
+                                                <div class="faq-card">
+                                                    <p class="is-size-5-desktop">What should I bring?</p>
+                                                    <p class="faq-content">
+                                                        You should bring a computer, chargers, any hardware you think you will need, toiletries, & a sleeping bag. 
+                                                        Additionally, bring a student ID for check in.            
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -306,7 +232,7 @@
                 </div>
             </div>
             <div id="apply" style="margin-bottom: 50px;">
-                <div class="hero">
+                <div class="hero is-fullheight">
                     <div class="hero-body">
                         <div class="container">
                             <div class="title">
@@ -325,7 +251,7 @@
                 </div>
             </div>
             <div id="schedule">
-                <div class="hero">
+                <div class="hero is-fullheight">
                     <div class="hero-body">
                         <div class="container">
                             <div class="title">
@@ -408,10 +334,10 @@
             <footer class="footer">
                 <div class="content has-text-centered">
                     <p>
-                        <a href=""><i class="fab fa-instagram icon"></i></a>
-                        <a href=""><i class="fab fa-github icon"></i></a>
-                        <a href=""><i class="fab fa-twitter icon"></i></a>
-                        <a href=""><i class="fas fa-envelope icon"></i></a>
+                        <a href="https://www.instagram.com/novahacks/"><i class="fab fa-instagram icon"></i></a>
+                        <a href="https://github.com/rpcatullo/NovaHacks"><i class="fab fa-github icon"></i></a>
+                        <a href="https://twitter.com/nova_hacks"><i class="fab fa-twitter icon"></i></a>
+                        <a href="mailto:hello@novahacks.org"><i class="fas fa-envelope icon"></i></a>
                         <br>
                         NovaHacks is a 501(c)(3) nonprofit organization<br>
                         <p style="color: rgba(255, 255, 255, .5); margin-top: -10px;">
@@ -451,7 +377,8 @@
 
             });
 
-            var text = ["new hacker friends", "a cool project", "something amazing", "something innovative", "the next big app", "a prize-winning program", "the best thing since linux", "art with code"];
+            var text = ["new hacker friends", "a cool project", "something amazing", "something innovative", "the next big app", "art with code"];
+            text = text.concat($(window).width() < 1024 ? ["awesome programs", "coding a superpower"] : ["a prize-winning program", "the best thing since linux"]);
             var j = 0;
             var i = 0;
 
@@ -485,14 +412,22 @@
 
             writeText();
 
+            if ($(window).height() > 1023) {
+                $(this.children).addClass('enabled');
+            }
+
             $('.faq-card').hover(
                 function() {
-                    $(this.children).css('transition', 'all 500ms ease-in-out 100ms');
-                    $(this.children).addClass('enabled');
+                    if ($(window).height() < 1024) {
+                        $(this.children).css('transition', 'all 500ms ease-in-out 100ms');
+                        $(this.children).addClass('enabled');
+                    }
                 }, 
                 function() {
-                    $(this.children).css('transition', 'all 100ms ease-in-out');
-                    $(this.children).removeClass('enabled');
+                    if ($(window).height() < 1024) {
+                        $(this.children).css('transition', 'all 100ms ease-in-out');
+                        $(this.children).removeClass('enabled');
+                    }
             });
             $('.hour').after(function() {
                 var width = $(this).parent().width();
