@@ -36,15 +36,15 @@
                             About
                         </a>
 
-                        <a class="navbar-item" href="#faq">
+                        <a class="navbar-item" href="#faq-head">
                             FAQ
                         </a>
 
-                        <a class="navbar-item" href="#apply">
+                        <a class="navbar-item" href="#apply-head">
                             Apply
                         </a>
 
-                        <a class="navbar-item" href="#schedule">
+                        <a class="navbar-item" href="#schedule-head">
                             Schedule
                         </a>
 
@@ -115,6 +115,7 @@
                 <div class="hero is-fullheight">
                     <div class="hero-body">
                         <div class="container">
+                            <div id="faq-head" style="position: relative; bottom: 100px;"></div>
                             <div class="title">
                                 <p class="underlined">FAQ</p>
                             </div>
@@ -231,10 +232,11 @@
                     </div>
                 </div>
             </div>
-            <div id="apply" style="margin-bottom: 50px;">
+            <div id="apply" style="margin-bottom: 50px; margin-top: 150px;">
                 <div class="hero is-fullheight">
                     <div class="hero-body">
                         <div class="container">
+                            <div id="apply-head" style="position: relative; bottom: 100px;"></div>
                             <div class="title">
                                 <p class="underlined">Apply</p>
                             </div>
@@ -254,6 +256,7 @@
                 <div class="hero is-fullheight">
                     <div class="hero-body">
                         <div class="container">
+                            <div id="schedule-head" style="position: relative; bottom: 100px;"></div>
                             <div class="title">
                                 <p class="underlined">Schedule</p>
                             </div>
@@ -429,7 +432,6 @@
                         $(this.children).removeClass('enabled');
                     }
             });
-            
             $('.hour').after(function() {
                 var width = $(this).parent().width();
                 return "<span style='width: " + (width - $(this).width()) + "px; display: inline-block; position: relative; bottom: " + ($(this).width() == 0 ? "13px" : "5px" ) + "; border-top: 1px solid #ccc;'></span>";
