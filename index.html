@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="has-navbar-fixed-top">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
@@ -13,7 +13,7 @@
     </head>
     <body>
         <section class="page">
-            <nav class="navbar" role="navigation" aria-label="main navigation">
+            <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
                     <a class="navbar-item logo" href="." style="margin-top: 3px;">
                         <img src="media/novahacks-logo-full.png" width="112" height="28">
@@ -28,7 +28,7 @@
             
                 <div id="navbar" class="navbar-menu">
                     <div class="navbar-start">
-                        <a class="navbar-item">
+                        <a class="navbar-item" href=".">
                             Home
                         </a>
                         
@@ -36,15 +36,15 @@
                             About
                         </a>
 
-                        <a class="navbar-item" href="#faq-head">
+                        <a class="navbar-item" href="#faq">
                             FAQ
                         </a>
 
-                        <a class="navbar-item" href="#apply-head">
+                        <a class="navbar-item" href="#apply">
                             Apply
                         </a>
 
-                        <a class="navbar-item" href="#schedule-head">
+                        <a class="navbar-item" href="#schedule">
                             Schedule
                         </a>
 
@@ -52,18 +52,18 @@
                             Sponsors
                         </a>
 
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="#team">
                             Team
                         </a>
                     </div>            
                     <div class="navbar-end">
                         <div class="navbar-item end-item">
                             <div class="buttons">
-                                <a class="button is-theme" href="registration.html">
+                                <a class="button is-theme nav-button" href="registration/">
                                     <strong>Register</strong>
                                 </a>
-                                <a class="button is-light" href="mailto:hello@novahacks.org">
-                                    Contact
+                                <a class="button is-theme nav-button" href="mailto:hello@novahacks.org">
+                                    <strong>Contact</strong>
                                 </a>
                             </div>
                         </div>
@@ -111,11 +111,11 @@
                     </div>
                 </div>
             </div>
-            <div id="faq">
+            <div id="faq-head">
                 <div class="hero is-fullheight">
                     <div class="hero-body">
                         <div class="container">
-                            <div id="faq-head" style="position: relative; bottom: 100px;"></div>
+                            <div id="faq" style="position: relative; bottom: 100px;"></div>
                             <div class="title">
                                 <p class="underlined">FAQ</p>
                             </div>
@@ -232,11 +232,11 @@
                     </div>
                 </div>
             </div>
-            <div id="apply" style="margin-bottom: 50px; margin-top: 150px;">
+            <div id="apply-head" style="margin-bottom: 50px; margin-top: 150px;">
                 <div class="hero is-fullheight">
                     <div class="hero-body">
                         <div class="container">
-                            <div id="apply-head" style="position: relative; bottom: 100px;"></div>
+                            <div id="apply" style="position: relative; bottom: 100px;"></div>
                             <div class="title">
                                 <p class="underlined">Apply</p>
                             </div>
@@ -245,18 +245,21 @@
                                     Unfortunately, we do have a maximum capacity for participants. As such, it is best to apply early so as not to
                                     risk losing a spot at the hackathon when applications close. To apply, you need to provide name, age, grade, and sign 
                                     liability forms as well as other legal forms our venue requires.<br><br>
-                                    To get started with this process, click the <button style="border-radius: 5px; font-weight: bold;">Register</button> button in the top right corner.
+                                    To get started with this process, click the&nbsp;
+                                    <a class="button is-theme nav-button" style="width: 60px !important; height: 28px; font-size: 12px; position: relative; top: 2px;">
+                                        <strong>Register</strong>
+                                    </a>&nbsp; button in the top right corner.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="schedule">
+            <div id="schedule-head">
                 <div class="hero is-fullheight">
                     <div class="hero-body">
                         <div class="container">
-                            <div id="schedule-head" style="position: relative; bottom: 100px;"></div>
+                            <div id="schedule" style="position: relative; bottom: 100px;"></div>
                             <div class="title">
                                 <p class="underlined">Schedule</p>
                             </div>
@@ -326,6 +329,46 @@
                                                 <span class="hour"></span><br>
                                                 <span class="hour">12:00&nbsp;</span><br>
                                             </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="team-head" style="margin-top: 200px;">
+                <div class="hero is-fullheight">
+                    <div class="hero-body">
+                        <div class="container">
+                            <div id="team" style="position: relative; bottom: 100px;"></div>
+                            <div class="title">
+                                <p class="underlined">Team</p>
+                            </div>
+                            <div>
+                                <div class="columns" style="position: relative; top: 50px;">
+                                    <div class="column">
+                                        <div class="profile-card">
+                                            <div class="image is-96x96" style="margin: auto;">
+                                                <img src="media/profile_ryan.png" alt="Ryan Profile" class="is-rounded">
+                                            </div><br>
+                                            <div class="subtitle" style="text-align: center;">
+                                                <p>Ryan Catullo</p>
+                                                <p style="opacity: .5; font-size: 16px; margin-top: 5px;">Executive Director</p>
+                                            </div>
+                                            <div class="content">
+                                                <p style="padding: 5px; font-size: 14px;">
+                                                    I'm Ryan, a 16 year old fullstsack developer and Hack Club Leader at Riverbend High School 
+                                                    in Spotsylvania, VA. I was previously the Outreach Coordinator for AngelHacks in Venice, California,
+                                                    and now I am the Executive Director and Founder of NovaHacks 2019!
+                                                </p>
+                                                <p style="text-align: center;">
+                                                    <a href="https://www.instagram.com/ryan.catullo/"><i class="fab fa-instagram icon" style="font-size: 22px;"></i></a>
+                                                    <a href="https://github.com/rpcatullo/"><i class="fab fa-github icon" style="font-size: 22px;"></i></a>
+                                                    <a href="https://www.linkedin.com/in/ryan-catullo-077245191"><i class="fab fa-linkedin icon" style="font-size: 22px;"></i></a>
+                                                    <a href="mailto:ryan@novahacks.org"><i class="fas fa-envelope icon" style="font-size: 22px;"></i></a>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

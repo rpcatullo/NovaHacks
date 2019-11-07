@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html class="has-navbar-fixed-top">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>NovaHacks</title>
-        <link rel="stylesheet" href="main.css">     
-        <link rel="icon" href="media/novahacks-favicon.ico">
+        <link rel="stylesheet" href="../main.css">     
+        <link rel="icon" href="../media/novahacks-favicon.ico">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
@@ -13,10 +13,10 @@
     </head>
     <body>
         <section class="page">
-            <nav class="navbar" role="navigation" aria-label="main navigation">
+            <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
-                    <a class="navbar-item logo" href="." style="margin-top: 3px;">
-                        <img src="media/novahacks-logo-full.png" width="112" height="28">
+                    <a class="navbar-item logo" href="../" style="margin-top: 3px;">
+                        <img src="../media/novahacks-logo-full.png" width="112" height="28">
                     </a>
             
                     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
@@ -28,23 +28,23 @@
             
                 <div id="navbar" class="navbar-menu">
                     <div class="navbar-start">
-                        <a class="navbar-item" href=".">
+                        <a class="navbar-item" href="../">
                             Home
                         </a>
                         
-                        <a class="navbar-item" href="./#about">
+                        <a class="navbar-item" href="../#about">
                             About
                         </a>
 
-                        <a class="navbar-item" href="./#faq">
+                        <a class="navbar-item" href="../#faq">
                             FAQ
                         </a>
 
-                        <a class="navbar-item" href="./#apply">
+                        <a class="navbar-item" href="../#apply">
                             Apply
                         </a>
 
-                        <a class="navbar-item" href="./#schedule">
+                        <a class="navbar-item" href="../#schedule">
                             Schedule
                         </a>
 
@@ -52,18 +52,18 @@
                             Sponsors
                         </a>
 
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="../#team">
                             Team
                         </a>
                     </div>            
                     <div class="navbar-end">
                         <div class="navbar-item end-item">
                             <div class="buttons">
-                                <a class="button is-theme" href="registration.html">
+                                <a class="button is-theme nav-button" href="registration/">
                                     <strong>Register</strong>
                                 </a>
-                                <a class="button is-light" href="mailto:hello@novahacks.org">
-                                    Contact
+                                <a class="button is-light nav-button" href="mailto:hello@novahacks.org">
+                                    <strong>Contact</strong>
                                 </a>
                             </div>
                         </div>
@@ -101,9 +101,9 @@
                                 <input name="grade" class="input" type="text" placeholder="Grade">
                                 <input name="age" class="input" type="text" placeholder="Age">
                                 <input name="email" class="input" type="text" placeholder="Email">
-                                <input name="notes" class="input" type="text" placeholder="Notes (dietary restrictions, transportation issue, ...)">
+                                <input name="notes" class="input" type="text" placeholder="Notes (if none type none)">
                                 <div class="buttons" style="margin-top: 40px;">
-                                    <input class="button" type="submit" value="Submit" style="color: #000 !important; font-weight: bold !important;">
+                                    <input class="button" type="submit" value="Submit" id="register" disabled="disabled" style="color: #000 !important; font-weight: bold !important;">
                                 </div>
                             </form>
                         </div>
@@ -132,5 +132,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+
+            // Add a click event on each of them
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+
+                // Get the target from the "data-target" attribute
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+
+                });
+            });
+        }
+
+        });
+
+        (function() {
+            $('form > input').keyup(function() {
+
+                var empty = false;
+                $('form > input').each(function() {
+                    if ($(this).val() == '') {
+                        empty = true;
+                    }
+                });
+
+                if (empty) {
+                    $('#register').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+                } else {
+                    $('#register').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+                }
+            });
+        })()
     </script>
 </html>
